@@ -34,7 +34,7 @@ function generatePassword() {
     }
     console.log(password)
   }
-
+return password
 
 }
 // generator function  http://www.net-comber.com/charset.html
@@ -51,7 +51,7 @@ function getRandomNumber() {
 }
 function getRandomSymbol() {
   const symbol = '@#€£%^&*(){}[]+=<>/,.'
-  return symbol[Math.random(Math.random() * symbol.length)]
+  return symbol[Math.floor(Math.random() * symbol.length)]
  // console.log(getRandomSymbol())
 }
 
