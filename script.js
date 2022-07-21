@@ -13,6 +13,29 @@ function generatePassword() {
   if(!uppercaseChoice && !lowercaseChoice && !numericChoice && !specialCharacters){
     return "You must choose one option"
   }
+  var password = ""
+  var counter = 0;
+  while(counter < passwordLength){
+    if(counter<passwordLength && uppercaseChoice){
+      password += getRandomUpper()
+      counter++;
+    }
+    if(counter<passwordLength && lowercaseChoice){
+      password += getRandomLower()
+      counter++;
+    }
+    if(counter<passwordLength && numericChoice){
+      password += getRandomNumber()
+      counter++;
+    }
+    if(counter<passwordLength && specialCharacters){
+      password += getRandomSymbol()
+      counter++;
+    }
+    console.log(password)
+  }
+
+
 }
 // generator function  http://www.net-comber.com/charset.html
 function getRandomLower() {
@@ -29,7 +52,7 @@ function getRandomNumber() {
 function getRandomSymbol() {
   const symbol = '@#€£%^&*(){}[]+=<>/,.'
   return symbol[Math.random(Math.random() * symbol.length)]
-  console.log(getRandomSymbol())
+ // console.log(getRandomSymbol())
 }
 
 // Write password to the #password input
